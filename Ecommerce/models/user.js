@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        ispay: {
+            type: Number,
+            default: 0
+        },
         about: {
             type: String,
             trim: true

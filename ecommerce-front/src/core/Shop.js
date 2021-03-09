@@ -102,7 +102,7 @@ const Shop = () => {
         >
             <div className="row">
                 <div className="col-3">
-                    <h4>Filter by categories</h4>
+                    <h4></h4>
                     <ul>
                         <TreeView
                             categories={categories}

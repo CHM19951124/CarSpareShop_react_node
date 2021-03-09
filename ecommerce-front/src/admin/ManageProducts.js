@@ -24,7 +24,7 @@ const ManageProducts = ({ match }) => {
             if (data.error) {
                 console.log(data.error);
             } else {
-                loadProducts();
+                loadProducts(match.params.userId);
             }
         });
     };
@@ -45,24 +45,60 @@ const ManageProducts = ({ match }) => {
                         Total {products.length} products
                     </h2>
                     <hr />
-                    <ul className="list-group">
-                        {products.map((p, i) => (
-                            <li
-                                key={i}
-                                className="list-group-item d-flex justify-content-between align-items-center"
-                            >
-                                <strong style={{float:"left"}}>{p.name}</strong>
-                                <Link to={`/admin/product/update/${p._id}`}>
-                                    <button>
-                                        Update
-                                    </button>
-                                </Link>
-                                <button onClick={() => destroy(p._id)}>
-                                    Delete
-                                </button>
-                            </li>
+                    {/*<tbody>*/}
+                    {/*    {products.map((p, i) => (*/}
+                    {/*        <div*/}
+                    {/*            key={i}*/}
+                    {/*            className="list-group-item d-flex justify-content-between align-items-center"*/}
+                    {/*        >*/}
+                    {/*            <strong >{p.name}</strong>*/}
+                    {/*            <Link className="w3-bar-item w3-button w3-right" to={`/admin/product/update/${p._id}`}>*/}
+                    {/*                <button className="w3-bar-item w3-button">*/}
+                    {/*                    Update*/}
+                    {/*                </button>*/}
+                    {/*            </Link>*/}
+                    {/*            <button className="w3-bar-item w3-button w3-right" onClick={() => destroy(p._id)}>*/}
+                    {/*                Delete*/}
+                    {/*            </button>*/}
+                    {/*        </div>*/}
+                    {/*    ))}*/}
+                    {/*</tbody>*/}
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>PRICE</th>
+                            <th>CATEGORY</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {products.map((product) => (
+                            <tr key={product._id}>
+                                <td>{product._id}</td>
+                                <td>{product.name}</td>
+                                <td>{product.price}</td>
+                                <td>{product.category.name}</td>
+                                <td>
+                                        <Link style={{backgroundColor:"green",color:"white"}} className="w3-bar-item w3-button" to={`/admin/product/update/${product._id}`}>
+                                            Update
+                                        </Link>
+                                </td>
+                                <td>
+                                    <Link
+                                        style={{backgroundColor:"green",color:"white"}}
+                                        className="w3-bar-item w3-button"
+                                        onClick={() => destroy(product._id)}>
+                                        Delete
+                                    </Link>
+                                </td>
+                            </tr>
                         ))}
-                    </ul>
+                        </tbody>
+                    </table>
                     <br />
                 </div>
             </div>

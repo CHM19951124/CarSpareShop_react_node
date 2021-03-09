@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import Layout from '../core/Layout';
-import {authenticate, isAuthenticated, signin, signup} from '../auth';
+import {payment, authenticate, isAuthenticated, signin, signup} from '../auth';
 
 const Signup = () => {
     const [values, setValues] = useState({
@@ -9,6 +9,7 @@ const Signup = () => {
         email: '',
         password: '',
         error: '',
+        isPay: false,
         redirectToReferrer: false
     });
 
@@ -21,6 +22,7 @@ const Signup = () => {
 
     const clickSubmit = event => {
         event.preventDefault();
+        console.log("asdfasdf");
         setValues({ ...values, error: false });
         signup({ name, email, password }).then(data => {
             if (data.error) {

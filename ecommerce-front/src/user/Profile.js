@@ -10,6 +10,7 @@ const Profile = ({ match }) => {
         email: '',
         password: '',
         error: false,
+        isPay: false,
         success: false
     });
 

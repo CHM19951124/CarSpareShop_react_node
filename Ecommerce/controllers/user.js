@@ -37,7 +37,7 @@ exports.read = (req, res) => {
 
 exports.update = (req, res) => {
     // console.log('UPDATE USER - req.user', req.user, 'UPDATE DATA', req.body);
-    const { name, password } = req.body;
+    const { name, password, ispay } = req.body;
 
     User.findOne({ _id: req.profile._id }, (err, user) => {
         if (err || !user) {
@@ -61,6 +61,10 @@ exports.update = (req, res) => {
             } else {
                 user.password = password;
             }
+        }
+
+        if(ispay){
+            user.ispay = ispay;
         }
         user.save((err, updatedUser) => {
             if (err) {

@@ -2,12 +2,20 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken'); // to generate signed token
 const expressJwt = require('express-jwt'); // for authorization check
 const { errorHandler } = require('../helpers/dbErrorHandler');
+const paypal = require('paypal-rest-sdk');
+
+paypal.configure({
+    'mode': 'sandbox', //sandbox or live
+    'client_id': 'AYYLd_cP1lau9evgq01dx4NRE2XAFsKiL0HEmGYFU2Gq7-8PWeu_iHvRvevAQpVPiZg_W5-FG9Z8sVMi',
+    'client_secret': 'ELpy56u8YUNrp_HtqTwPQ2aPYRnnN93qrcAoDrZ-niAtarA2lexPmcQRKFvTSt9RJtVU4XTknDyKqS8-'
+});
 
 // using promise
 exports.signup = (req, res) => {
     // console.log("req.body", req.body);
     const user = new User(req.body);
     user.role = 1;
+    user.isPay = 0;
     user.save((err, user) => {
         if (err) {
             return res.status(400).json({
@@ -22,26 +30,6 @@ exports.signup = (req, res) => {
         });
     });
 };
-
-// using async/await
-// exports.signup = async (req, res) => {
-//     try {
-//         const user = await new User(req.body);
-//         console.log(req.body);
-
-//         await user.save((err, user) => {
-//             if (err) {
-//                 // return res.status(400).json({ err });
-//                 return res.status(400).json({
-//                     error: 'Email is taken'
-//                 });
-//             }
-//             res.status(200).json({ user });
-//         });
-//     } catch (err) {
-//         console.error(err.message);
-//     }
-// };
 
 exports.signin = (req, res) => {
     // find the user based on email
@@ -64,8 +52,8 @@ exports.signin = (req, res) => {
         // persist the token as 't' in cookie with expiry date
         res.cookie('t', token, { expire: new Date() + 9999 });
         // return response with user and token to frontend client
-        const { _id, name, email, role } = user;
-        return res.json({ token, user: { _id, email, name, role } });
+        const { _id, name, email, role ,ispay} = user;
+        return res.json({ token, user: { _id, email, name, role ,ispay} });
     });
 };
 

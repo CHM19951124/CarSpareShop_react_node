@@ -3,6 +3,7 @@ import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 import { createProduct, getCategories } from './apiAdmin';
+import PaypalButton from "../PayPal/PaypalButtons";
 
 const AddProduct = () => {
     const [values, setValues] = useState({
@@ -54,6 +55,7 @@ const AddProduct = () => {
     };
 
     useEffect(() => {
+        console.log(user);
         init();
     }, []);
 
@@ -170,7 +172,9 @@ const AddProduct = () => {
                     {showLoading()}
                     {showSuccess()}
                     {showError()}
-                    {newPostForm()}
+                    {
+                        (user.ispay == 1) ? newPostForm():<PaypalButton value={user}/>
+                    }
                 </div>
             </div>
         </Layout>
