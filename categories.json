@@ -1,0 +1,141 @@
+[{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506223"
+  },
+  "id": 1,
+  "pid": 0,
+  "name": "CATEGORIA"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506224"
+  },
+  "id": 2,
+  "pid": 1,
+  "name": "SOTTOCATEGORIA"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506225"
+  },
+  "id": 3,
+  "pid": 0,
+  "name": "MECCANICA"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506226"
+  },
+  "id": 4,
+  "pid": 3,
+  "name": "MOTORE "
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506227"
+  },
+  "id": 5,
+  "pid": 3,
+  "name": "DISTRIBUZIONE"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506228"
+  },
+  "id": 6,
+  "pid": 3,
+  "name": "SERVIZI"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506229"
+  },
+  "id": 7,
+  "pid": 3,
+  "name": "FILTRI"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622a"
+  },
+  "id": 8,
+  "pid": 3,
+  "name": "SCARICO"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622b"
+  },
+  "id": 9,
+  "pid": 3,
+  "name": "INIEZIONE"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622c"
+  },
+  "id": 10,
+  "pid": 0,
+  "name": "CAMBIO "
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622d"
+  },
+  "id": 11,
+  "pid": 10,
+  "name": "FRIZIONE"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622e"
+  },
+  "id": 12,
+  "pid": 10,
+  "name": "SEMIASSI"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df050622f"
+  },
+  "id": 13,
+  "pid": 0,
+  "name": "CARROZZERIA"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506230"
+  },
+  "id": 14,
+  "pid": 13,
+  "name": "PARAURTI ANT"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506231"
+  },
+  "id": 15,
+  "pid": 13,
+  "name": "PARAURTI POST"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506232"
+  },
+  "id": 16,
+  "pid": 13,
+  "name": "LAMIERATI ANT"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506233"
+  },
+  "id": 17,
+  "pid": 13,
+  "name": "LAMIERATI POST"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506234"
+  },
+  "id": 18,
+  "pid": 13,
+  "name": "VETRI "
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506235"
+  },
+  "id": 19,
+  "pid": 13,
+  "name": "SPECCHI"
+},{
+  "_id": {
+    "$oid": "60426bbeb8bc221df0506236"
+  },
+  "id": 20,
+  "pid": 13,
+  "name": "FANALERIA"
+}]
