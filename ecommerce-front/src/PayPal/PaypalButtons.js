@@ -8,8 +8,8 @@ import {isAuthenticated} from "../auth";
 const CLIENT = {
   // sandbox:"your sandbox id",
   // production:"your client id"
-  sandbox:"AYYLd_cP1lau9evgq01dx4NRE2XAFsKiL0HEmGYFU2Gq7-8PWeu_iHvRvevAQpVPiZg_W5-FG9Z8sVMi",
-  production:"your client id"
+  sandbox:"AYRLSYs1XLb_htB0Z0IHLAqI7ogzrj_mB3UIa6WVA8O12sBb4ePcJH2U0uufxJGwHt9JLiGYnHItEreM",
+  production:"AYRLSYs1XLb_htB0Z0IHLAqI7ogzrj_mB3UIa6WVA8O12sBb4ePcJH2U0uufxJGwHt9JLiGYnHItEreM"
 };
 
 const CLIENT_ID =
@@ -63,7 +63,7 @@ class PaypalButton extends React.Component {
           description: +"Mercedes G-Wagon",
           amount: {
             currency_code: "USD",
-            value: 200
+            value: 5.00
           }
         }
       ]
@@ -98,8 +98,7 @@ class PaypalButton extends React.Component {
         {showButtons && (
           <div>
             <div>
-              <h2>Items: Mercedes G-Wagon</h2>
-              <h2>Total checkout Amount $200</h2>
+              <h2>Per aggiungere una nuova pubblicità, paga 5 EUR una volta.</h2>
             </div>
 
             <PayPalButton
