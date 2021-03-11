@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCategories, list } from "./apiCore";
+import {getCategories, getFilteredProducts, list} from "./apiCore";
 import Card from "./Card";
 
 const Search = () => {

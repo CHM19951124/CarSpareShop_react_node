@@ -28,6 +28,7 @@ const Signup = () => {
             if (data.error) {
                 setValues({ ...values, error: data.error, redirectToReferrer: false });
             } else {
+                alert("User Create Sucess");
                 signin({ email, password }).then(data => {
                     if (data.error) {
                         setValues({ ...values, error: data.error, loading: false });
@@ -80,7 +81,6 @@ const Signup = () => {
 
     const redirectUser = () => {
         if (isAuthenticated()) {
-            alert("User Create Sucess")
             return <Redirect to="/" />;
         }
     };

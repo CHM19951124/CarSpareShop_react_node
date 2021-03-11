@@ -15,7 +15,7 @@ const Menu = ({ history }) => (
     <div>
         <div className="w3-bar" style={{background:"black", color:"white"}}>
             <Link style={isActive(history, "/")} to="/" className="w3-bar-item w3-button ">Casa</Link>
-            <Link style={isActive(history, "/shop")} to="/shop" className="w3-bar-item w3-button">Elenco</Link>
+            <Link style={isActive(history, "/shop")} to="/shop" className="w3-bar-item w3-button">ricerca</Link>
 
             {!isAuthenticated() && (
                 <Fragment>

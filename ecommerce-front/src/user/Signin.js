@@ -88,7 +88,6 @@ const Signin = () => {
 
     const redirectUser = () => {
         if (isAuthenticated()) {
-            alert("User Create Sucess")
             return <Redirect to="/" />;
         }
     };

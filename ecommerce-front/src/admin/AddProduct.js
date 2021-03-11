@@ -3,6 +3,7 @@ import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 import { createProduct, getCategories } from './apiAdmin';
+import {useSelector, useDispatch} from 'react-redux'
 import PaypalButton from "../PayPal/PaypalButtons";
 
 const AddProduct = () => {
@@ -55,7 +56,6 @@ const AddProduct = () => {
     };
 
     useEffect(() => {
-        console.log(user);
         init();
     }, []);
 
@@ -165,6 +165,10 @@ const AddProduct = () => {
             </div>
         );
 
+    const showPaypal = () => (
+        (((new Date()).getTime() -  (new Date(user.ispay)).getTime()) / ((1000 * 60 * 60 * 24)) < 365) ? newPostForm():<PaypalButton value={user}/>
+    );
+
     return (
         <Layout title="Add a new product" description={`G'day ${user.name}, ready to add a new product?`}>
             <div className="row">
@@ -172,9 +176,7 @@ const AddProduct = () => {
                     {showLoading()}
                     {showSuccess()}
                     {showError()}
-                    {
-                        (user.ispay == 1) ? newPostForm():<PaypalButton value={user}/>
-                    }
+                    {showPaypal()}
                 </div>
             </div>
         </Layout>

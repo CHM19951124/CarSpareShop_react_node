@@ -4,12 +4,14 @@ import scriptLoader from "react-async-script-loader";
 import Spinner from "./Spinner";
 import {update, updateUser} from "../user/apiUser";
 import {isAuthenticated} from "../auth";
+import {Redirect} from "react-router-dom";
+import showLoading from "../admin/AddProduct"
 
 const CLIENT = {
   // sandbox:"your sandbox id",
   // production:"your client id"
   sandbox:"AYRLSYs1XLb_htB0Z0IHLAqI7ogzrj_mB3UIa6WVA8O12sBb4ePcJH2U0uufxJGwHt9JLiGYnHItEreM",
-  production:"AYRLSYs1XLb_htB0Z0IHLAqI7ogzrj_mB3UIa6WVA8O12sBb4ePcJH2U0uufxJGwHt9JLiGYnHItEreM"
+  production:""
 };
 
 const CLIENT_ID =
@@ -76,14 +78,18 @@ class PaypalButton extends React.Component {
         payerID: data.payerID,
         orderID: data.orderID
       };
-      this.props.value.ispay = 1;
+      this.props.value.ispay = new Date();
       const {name, email, password, ispay} = this.props.value;
       console.log(name, email, password, ispay);
       update(this.props.value._id, token, {name, email, password, ispay}).then(data => {
         if (data.error) {
           alert(data.error);
         } else {
-          console.log(data);
+          updateUser(data, () => {
+            //showLoading();
+             alert("success");
+             window.location.reload(false);
+          });
         }
       });
     });

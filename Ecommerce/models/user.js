@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema(
             required: true
         },
         ispay: {
-            type: Number,
+            type: Date,
             default: 0
         },
         about: {

@@ -21,7 +21,6 @@ const Home = () => {
 
     const loadProductsByArrival = () => {
         getProducts('createdAt').then(data => {
-            console.log(data);
             if (data.error) {
                 setError(data.error);
             } else {
@@ -42,7 +41,7 @@ const Home = () => {
             className="container-fluid"
         >
             <Search />
-            <h2 className="mb-4">New Arrivals</h2>
+            {/*<h2 className="mb-4">New Arrivals</h2>*/}
             <div className="row">
                 {productsByArrival.map((product, i) => (
                     <div key={i} className="col-4 mb-3">
