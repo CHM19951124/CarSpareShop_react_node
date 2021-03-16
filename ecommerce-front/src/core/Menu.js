@@ -21,7 +21,7 @@ const Menu = ({ history }) => (
                 <Fragment>
                     <Link style={isActive(history, "/signin")} to="/signin" className="w3-bar-item w3-button w3-right">
                         <i className='fas fa-user-circle' style={{fontSize:'20px'}}> Registrati</i></Link>
-                    <Link style={{background:"green"}} to="/create/product" className="w3-bar-item w3-button w3-right advertise">New Advertise</Link>
+                    <Link style={{background:"green"}} to="/create/product" className="w3-bar-item w3-button w3-right advertise">nuova inserzione</Link>
                 </Fragment>
             )}
             {isAuthenticated() && (

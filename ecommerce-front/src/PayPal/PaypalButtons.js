@@ -10,12 +10,12 @@ import showLoading from "../admin/AddProduct"
 const CLIENT = {
   // sandbox:"your sandbox id",
   // production:"your client id"
-  sandbox:"AYRLSYs1XLb_htB0Z0IHLAqI7ogzrj_mB3UIa6WVA8O12sBb4ePcJH2U0uufxJGwHt9JLiGYnHItEreM",
-  production:""
+  sandbox:"",
+  production:"AVoy7FbluM3BgUTQ_9rT9KIZeeW6tbYMCkSxQC4J6JBEhRXHVs8FcJM0i2s2mC7vUjTtmoh8RvfbkLCd"
 };
 
-const CLIENT_ID =
-  process.env.NODE_ENV === "production" ? CLIENT.production : CLIENT.sandbox;
+const CLIENT_ID = CLIENT.production;
+  //process.env.NODE_ENV === "production" ? CLIENT.production : CLIENT.sandbox;
 const { token } = isAuthenticated();
 let PayPalButton = null;
 

@@ -62,7 +62,7 @@ const Signup = () => {
                 <input onChange={handleChange('password')} type="password" className="form-control" value={password} />
             </div>
             <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
+                invia
             </button>
         </form>
     );
@@ -87,7 +87,7 @@ const Signup = () => {
 
     return (
         <Layout
-            title="Signup"
+            title="registrati"
             description="Signup to Node React E-commerce App"
             className="container col-md-8 offset-md-2"
         >

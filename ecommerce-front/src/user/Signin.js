@@ -60,10 +60,10 @@ const Signin = () => {
 
             <div>
                 <button onClick={clickSubmit} className="btn btn-primary">
-                    Submit
+                    invia
                 </button>
                 <Link to="/signup" style={{paddingLeft:'5%',color:"blue",fontsize:'20px'}}>
-                    SignUp
+                    registrati
                 </Link>
             </div>
 
